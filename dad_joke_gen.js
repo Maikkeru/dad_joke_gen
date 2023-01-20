@@ -4,7 +4,7 @@ function sleep(miliseconds) {
   while (currentTime + miliseconds >= new Date().getTime()) {}
 }
 
-const dad_joke = {
+const dad_joke_array = {
   "I have a joke about chemistry": "but I don’t think it’ll get a reaction",
   "I have a joke about banking": "but I lost interest.",
   "I have a joke about cows": "but I don't want to milk it.",
@@ -35,10 +35,18 @@ const dad_joke = {
   "I have a joke about procrastination": "but I’ll tell it to you later.",
 };
 
-let rando = Math.floor(Math.random() * Object.keys(dad_joke).length);
-console.log(rando);
-console.log(Object.keys(dad_joke).length);
 
-console.log(Object.keys(dad_joke)[rando].toString());
-sleep(2000);
-console.log(dad_joke[Object.keys(dad_joke)[rando]]);
+count = 0
+let joke_teller = function() {
+    let rando = Math.floor(Math.random() * Object.keys(dad_joke_array).length);
+    console.log(rando);
+    console.log(Object.keys(dad_joke_array).length);
+    console.log(Object.keys(dad_joke_array)[rando].toString());
+    sleep(2000);
+    console.log(dad_joke_array[Object.keys(dad_joke_array)[rando]]);
+    count ++;
+    console.log(count);
+    joke_teller();
+};
+
+joke_teller();
