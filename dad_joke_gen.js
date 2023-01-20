@@ -38,15 +38,19 @@ const dad_joke_array = {
 
 count = 0
 let joke_teller = function() {
-    let rando = Math.floor(Math.random() * Object.keys(dad_joke_array).length);
-    console.log(rando);
-    console.log(Object.keys(dad_joke_array).length);
-    console.log(Object.keys(dad_joke_array)[rando].toString());
-    sleep(2000);
-    console.log(dad_joke_array[Object.keys(dad_joke_array)[rando]]);
-    count ++;
-    console.log(count);
-    joke_teller();
+    if(count <= 15){
+        let rando = Math.floor(Math.random() * Object.keys(dad_joke_array).length);
+        console.log(rando);
+        console.log(Object.keys(dad_joke_array).length);
+        console.log(Object.keys(dad_joke_array)[rando].toString());
+        sleep(2000);
+        console.log(dad_joke_array[Object.keys(dad_joke_array)[rando]]);
+        count ++;
+        console.log(count);
+        joke_teller();
+    }else{
+        console.log("That's all I got. Now leave me be!")
+    }
 };
 
 joke_teller();
