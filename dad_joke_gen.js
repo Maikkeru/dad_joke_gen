@@ -1,10 +1,11 @@
+console.time("short listener Timed");
 function sleep(miliseconds) {
   var currentTime = new Date().getTime();
 
   while (currentTime + miliseconds >= new Date().getTime()) {}
 }
 
-const dad_joke_array = {
+const dad_joke_obj = {
   "I have a joke about chemistry": "but I don’t think it’ll get a reaction",
   "I have a joke about banking": "but I lost interest.",
   "I have a joke about cows": "but I don't want to milk it.",
@@ -106,21 +107,57 @@ const dad_joke_array = {
   "I finally watched that documentary on clocks.": "It was about time.",
 };
 
-count = 0;
+const improv_adlib = [
+  "How about another...",
+  "just one more, what do you say",
+  "if you like that one, you may like this one",
+  "if you hated that one, give this one a go",
+  "you may enjoy this one too",
+  "okay okay, last one",
+  "okay, no really, last one",
+  "should i stop?! LOL",
+  "sorry, i just need to get this one out!",
+  "maybe just one more...",
+  "You may think the last one was lame but just listen to this",
+  "You want something better than that",
+];
+
+count = 1;
+const joke_limit = 3;
 linebreak = "=".repeat(40);
 let joke_teller = function () {
-  if (count <= 10) {
-    let rando = Math.floor(Math.random() * Object.keys(dad_joke_array).length);
-    //console.log(Object.keys(dad_joke_array).length);
-    console.log(Object.keys(dad_joke_array)[rando].toString());
+  if (count <= joke_limit) {
+    let rando = Math.floor(Math.random() * Object.keys(dad_joke_obj).length);
+    let rando_adlib = Math.floor(
+      Math.random() * Object.keys(improv_adlib).length
+    );
+    //The Leadup
+    console.log(Object.keys(dad_joke_obj)[rando].toString());
     sleep(2000);
-    console.log(dad_joke_array[Object.keys(dad_joke_array)[rando]]);
+    //The Punchline
+    console.log(dad_joke_obj[Object.keys(dad_joke_obj)[rando]]);
+    sleep(1500);
     count++;
-    console.log(linebreak);
-    joke_teller();
+    if (count <= joke_limit) {
+      console.log(linebreak);
+      console.log(improv_adlib[rando_adlib]);
+      console.log(linebreak);
+      sleep(2000);
+      console.log(count);
+      joke_teller();
+    }
   } else {
+    sleep(2000);
     console.log("That's all I got. Now leave me be!");
+    sleep(1000);
+    console.log(linebreak);
+    console.log(
+      "By the way, you may want to use these inthe future. Be careful with them, they are absolute gold!"
+    );
   }
 };
 
 joke_teller();
+
+console.timeEnd("short listener Timed");
+console.table(dad_joke_obj);
