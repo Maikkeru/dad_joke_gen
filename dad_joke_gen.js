@@ -1,10 +1,10 @@
-console.time("short listener Timed");
+//timer function that allows for partial delays in the program
 function sleep(miliseconds) {
   var currentTime = new Date().getTime();
-
   while (currentTime + miliseconds >= new Date().getTime()) {}
 }
 
+//Main joke object
 const dad_joke_obj = {
   "I have a joke about chemistry": "but I don’t think it’ll get a reaction",
   "I have a joke about banking": "but I lost interest.",
@@ -105,8 +105,74 @@ const dad_joke_obj = {
   "I was once a personal trainer": "until I gave a too-weak notice.",
   "I just paid $100 for a belt that doesn’t fit": "— what a huge waist!",
   "I finally watched that documentary on clocks.": "It was about time.",
+  "What did one plate whisper to the other plate?": "Dinner is on me.",////==================
+  "What's 90 degrees but covered with ice?": "The North and South Poles.",
+  "What happened when the blue ship and the red ship collided at sea?": "Their crews were marooned.",
+  "What are the strongest days of the week? Saturday and Sunday.": "All the others are weekdays.",
+  "What's the difference between the bird flu and the swine flu?": "One requires tweetment and the other an oinkment.",
+  "Why did the golfer bring two pairs of pants?": "In case he got a hole in one.",
+  "How do you stop a bull from charging?": "Cancel its credit card.",
+  "What do you call a line of men waiting to get haircuts?": "A barberqueue.",
+  "Why do seagulls fly over the sea?": "If they flew over the bay, they would be bagels.",
+  "Am I the only man my wife has ever dated?": "Unfortunately yes, she said the others were all nines or tens!",
+  "I'm thinking I should do lunges to stay in shape.": "That would be a big step forward.",
+  "What's the difference between a man's wallet before and after kids?": "There are pictures where the money used to be.",
+  "What did the baby corn say to the mama corn?": "Where's popcorn?",
+  "I wish my gray hair started in Las Vegas because what happens in Vegas,": "stays in Vegas.",
+  "What vegetable is cool,": "but not that cool? Radish.",
+  "My kid is blaming me for ruining their birthday.": "That's ridiculous, I didn't even know it was today!",
+  "I haven't spoken to my wife in four years.": "I thought it would be rude to interrupt her!",
+  "My kid gave me a 'World's Best Dad' mug.": "At least she inherited my sense of humor.",
+  "When a toddler reaches the 'why?' stage, it's like opening a bottle of champagne":"—once it's uncorked, there's no going back.",
+  "What do you call two monkeys who share an Amazon Prime account?": "Prime mates.",
+  "How do you measure the mass of an influencer's following?": "By Instagrams!",
+  "How do you teach kids about taxes?": "Eat 38% of their ice cream.",
+  "Two sheep walk into a—baaaa.": "what, that's it...",
+  "What do you call a beehive without an exit?": "Un-bee-lievable.",
+  "What did the seal with one fin say to the shark?": "If seal is broken, do not consume.",
+  "I wish my kids weren't offended by my Frozen jokes.": "They really need to let it go!",
+  "Why did the football coach go to the bank?": "To get his quarter back.",
+  "Why can't a leopard hide?": "He's always spotted.",
+  "Air used to be free at the gas station, now it costs 2.50. You want to know why?": "Inflation.",
+  "I tried to get a smart car the other day but they sold out too fast. Why?": "I guess I'm just a bit slow.",
+  "I told my wife that a husband is like a fine wine: we just get better with age.": "The next day she locked me in the cellar.",
+  "Did you hear about the claustrophobic astronaut?": "He just wanted a bit more space.",
+  "Why did the orange lose the race?": "It ran out of juice.",
+  "How do you fix a broken pumpkin?": "With a pumpkin patch.",
+  "Why are fish so smart?": "They live in schools!",
+  "What's the best thing about Switzerland?" :"I don't know, but the flag is a big plus.",
+  "Why did the man fall down the well?": "Because he couldn't see that well!",
+  "Why do peppers make such good archers?": "Because they habanero.",
+  "What did the sink tell the toilet?": "You look flushed!",
+  "Where do boats go when they're sick?": "To the dock.",
+  "What has ears but cannot hear?": "A cornfield!",
+  "Stop looking for the perfect match": "use a lighter.",
+  "Can February March?": "No, but April May!",
+  "Why was 6 afraid of 7?": "Because 7 ate nine!",
+  "I'm so good at sleeping": "that I do it with my eyes closed.",
+  "Try the seafood diet—you see food,": "then you eat it.",
+  "What do you call a pencil with two erasers?": "Pointless.",
+  "Did you hear the one about the roof?": "Never mind, it's over your head.",
+  "What's brown and sticky?": "A stick.",
+  "I hated facial hair": "but then it grew on me.",
+  "It really takes guts": "to be an organ donor.",
+  "Did you hear the rumor about butter?": "Well, I'm not going to go spreading it!",
+  "What did the plumber say to the singer?": "Nice pipes.",
+  "I was going to tell a time-traveling joke,": "but you didn't like it.",
+  "How do you deal with a fear of speed bumps?": "You slowly get over it.",
+  "I ordered a chicken and an egg online.": "I'll let you know.",
+  "I'm reading an anti-gravity book.": "I can't put it down!",
+  "I'd avoid the sushi if I were you.": "It's a little fishy!",
+  "What state is known for its small drinks?": "Minnesota.",
+  "What's Forrest Gump's password?": "1forrest1",
+  "What do houses wear?": "An address.",
+  "What did the two pieces of bread say on their wedding day?": "It was loaf at first sight.",
+  "What kind of shoes does a lazy person wear?": "Loafers.",
+  "What did the ocean say to the beach?": "Nothing, it just waved.",
+  "What happens when a snowman throws a tantrum?": "He has a meltdown."
 };
 
+//improv jokes that act as filler between the main jokes
 const improv_adlib = [
   "How about another...",
   "just one more, what do you say",
@@ -122,20 +188,20 @@ const improv_adlib = [
   "You want something better than that",
 ];
 
-count = 1;
-const joke_limit = 3;
-linebreak = "=".repeat(40);
+count = 1; //cycle counter
+
+const joke_limit = 3; //upper limit for jokes
+linebreak = "=".repeat(40); //separator for each joke and adlib
 let joke_teller = function () {
   if (count <= joke_limit) {
     let rando = Math.floor(Math.random() * Object.keys(dad_joke_obj).length);
     let rando_adlib = Math.floor(
       Math.random() * Object.keys(improv_adlib).length
     );
-    //The Leadup
-    console.log(Object.keys(dad_joke_obj)[rando].toString());
+    //All sleep functions used to give spatial timing for comedic effect.
+    console.log(Object.keys(dad_joke_obj)[rando].toString()); //The joke Leadup
     sleep(2000);
-    //The Punchline
-    console.log(dad_joke_obj[Object.keys(dad_joke_obj)[rando]]);
+    console.log(dad_joke_obj[Object.keys(dad_joke_obj)[rando]]); //The joke Punchline
     sleep(1500);
     count++;
     if (count <= joke_limit) {
@@ -143,21 +209,20 @@ let joke_teller = function () {
       console.log(improv_adlib[rando_adlib]);
       console.log(linebreak);
       sleep(2000);
-      console.log(count);
+      console.log(`On to Joke number ${count}`);
       joke_teller();
+    } else {
+      console.log(linebreak);
+      sleep(2000);
+      console.log("That's all I got. Now leave me be!");
+      sleep(1000);
+      console.log(
+        "By the way, you may want to use these in the future. Be careful with them, they are absolute gold!"
+      );
     }
-  } else {
-    sleep(2000);
-    console.log("That's all I got. Now leave me be!");
-    sleep(1000);
-    console.log(linebreak);
-    console.log(
-      "By the way, you may want to use these inthe future. Be careful with them, they are absolute gold!"
-    );
   }
 };
 
 joke_teller();
-
-console.timeEnd("short listener Timed");
+sleep(2000);
 console.table(dad_joke_obj);

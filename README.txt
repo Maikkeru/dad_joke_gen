@@ -1,9 +1,12 @@
 This is my first javaScript app.
 
 Project's Title =============
-The Name of this project is Dad Joke generator....
+The Name of this project is: Dad Joke generator....
 Project Description =============
-This project will supply you with a random dad joke until you've had enough.
+This project will supply you with a random dad joke until you've had enough. 
+Set the joke limit and and the Dad Joke generator do the hard-ish work for you. 
+There are currently 138 dad jokes in total.
+It will supply a table with every joke in the program at the end of the program.
 Include Credits ==============
 The logic of this app was created by Michael Mitchell and the dad Jokes were supplied by https://www.goodhousekeeping.com/life/parenting/a36279135/best-corny-dad-jokes-for-kids/
 
