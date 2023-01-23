@@ -105,7 +105,7 @@ const dad_joke_obj = {
   "I was once a personal trainer": "until I gave a too-weak notice.",
   "I just paid $100 for a belt that doesn’t fit": "— what a huge waist!",
   "I finally watched that documentary on clocks.": "It was about time.",
-  "What did one plate whisper to the other plate?": "Dinner is on me.",////==================
+  "What did one plate whisper to the other plate?": "Dinner is on me.",
   "What's 90 degrees but covered with ice?": "The North and South Poles.",
   "What happened when the blue ship and the red ship collided at sea?": "Their crews were marooned.",
   "What are the strongest days of the week? Saturday and Sunday.": "All the others are weekdays.",
